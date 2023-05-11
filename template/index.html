@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block content %}
+<div class="imagebg" style="background-image: url('{% static 'images/Frame 2395 (2).png'%}'); background-size: cover;">
+    <div class="overlay">
+      <div class="layercontent">
+        <h2 class="h2display text-white">Get Fresh <br> Produce Directly <br> From The Farm</h2>
+        <p class="text-white"> Get access to healthy food stuffs and order anyone of your choice.</p>
+        <a href="{%url 'products'%}" class="btn-green mt-50">shop now</a>
+      </div>
+    </div>
+
+
+  </div>
+  {%endblock%}

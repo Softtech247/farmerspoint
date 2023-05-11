@@ -1,0 +1,64 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block content %}
+
+  <div class="container-fluid">
+    <div class="row" style="padding-left:20px;">
+      <div class="col-sm-12 col-md-2 d-flex product-list-all flex-column align-items-left pl-3">
+        <div class="col-8">
+          <a href="" class="btn-green"> Categories</a>
+        </div>
+        {% for category, subcategories in categorydict.items %}
+        <div class="product-list d-flex flex-column">
+          <h4 class="text-green">{{ category }}</h4>
+          {% for subcategory_id, subcategory_name in subcategories %}
+            <li class="text-green"><a href="">{{ subcategory_name }}</a></li>
+          {% endfor %}
+      
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="col-md-10 col-sm-12">
+        <div class="row">
+          {%for product in products%}
+          {% if forloop.counter < 21 %}
+        <div class="col-sm-5 col-md-4 col-lg-3 d-flex py-1">
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <img class="round-image" src="{{ product.image.url }}" alt="">
+            <p class="text-green">{{product}}</p>
+            <p>{{product.farm}}</p>
+            <h6>#{{product.price}}/{{product.unit}}</h6>
+          </div>
+        </div>
+        {%endif%}
+          {%endfor%}
+          
+        </div>
+
+      </div>
+
+    </div>
+
+
+  <div class=" row" style="gap:60px">
+    <div class=" row col-sm-12 col-md-8 col-lg-5 product-list-all-white  justify-content-center"
+      style="margin-left:20px; margin-top:6rem">
+      <div class="col-8  d-flex align-items-center pt-3">
+        <a href="" class="btn btn-danger btn-lg ">Special Deals/Promo</a>
+      </div>
+{% for p_product in promo_products%}
+{% if forloop.counter < 5 %}
+      <div class="col-6 d-flex flex-column   py-2  align-items-center">
+        <img class="square-image" src="{{ p_product.image.url }}" alt="">
+        <p class="text-green">{{p_product}}</p>
+        <p>{{p_product.farm}}</p>
+        <h6>#{{p_product.price}}/{{p_product.unit}}</h6>
+      </div>
+      {%endif%}
+{%endfor%}
+      
+    </div>
+  </div>
+{%endblock%}

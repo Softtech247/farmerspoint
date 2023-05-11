@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+
+<head>
+    <title> Famers Point {% block title%} {%endblock%}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="B2C platform for all Farmers" />
+    <meta name="author" content="Famers Point" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- app favicon -->
+    <link rel="shortcut icon" href="{%static 'images/image 29.png'%}">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+        <!-- app style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-MAMn+M3qKcP5MtxyfBkuQ+Q2jKtWdAHLbvIMKVr5rZG/l8FKPCWJclv2zX9X29eBUxhUbW73mwEjJNy1DUrOw==" crossorigin="anonymous" />
+    <script src="{% static 'js/script.js' %}" defer></script>
+
+</head>
+
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 mb-2 fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand " href="/">
+            <img src="{%static 'images/image 29.png' %}" alt="" width="auto" height="70">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse px-5" id="navmenu">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item active h6">
+                    <a href="{% url '' %}" class="nav-link text-primary px-3">Home</a>
+                </li>
+                <li class="nav-item h6">
+                    <a href="{% url '' %}" class="nav-link text-primary px-3">About Us</a>
+                </li>
+                <li class="nav-item h6">
+                    <a href="{% url 'products' %}" class="nav-link text-primary px-3">Products</a>
+                </li>
+            
+                <form class="d-flex  my-2 my-lg-0" >
+                <div class="input-group" style="width: 450px; border-radius:12px; background-color:#FFF8DC ; border: 1px solid #23A636">
+                    <input type="text" class="form-control text-primary rounded-0 border-0" placeholder="Search" aria-label="Search" style="border-radius:20px !important;">
+                    <div class="input-group-append">
+                        <button class="btn rounded-0 border-0" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </ul>
+            <div class="ml-auto d-flex">
+                <ul class="navbar-nav">
+                    <li class="nav-item h6">
+                        <a href="{% url '' %}" class="nav-link text-light">
+                            <i class="fas fa-shopping-cart"></i>
+                            Cart
+                        </a>
+                    </li>
+                    <li class="nav-item h6">
+                        <a href="{% url '' %}" class="nav-link  text-light">
+                            <i class="fas fa-user"></i>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </div>            
+        </div>
+    </div>
+</nav>
+
+
+<body class=" container-fluid pad-top" style="padding-top: 7rem;">
+   
+        {%block content %}
+    <!---  CONTENT GOES IN HERE-->
+    {%endblock%}
+</div>
+    <footer class="pt-2" style="z-index: 110;">
+        
+        <div class="row bg-primary  d-flex justify-content-center text-light">
+           <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+                <h5 class=""> Users Page</h5>
+                <ul class="d-flex  flex-column">
+                    <li class="font-weight-bold"><a href="{%url ''%}" class="text-light"> Create Quiz</a></li>
+                    <li class="text font-weight-bold"><a href="{%url ''%}" class="text-light">Learning</a></li>
+                    <li class="text font-weight-bold"><a href="{%url  ''%}" class="text-light">Online Tutor</a></li>
+                    <li class="text font-weight-bold"><a href="{%url ''%}" class="text-light">Take Quiz</a></li>
+                    <li class="text font-weight-bold"><a href="{%url ''%}" class="text-light">Read Books</a></li>
+                </ul>
+
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+                <h4 class=""> Login</h5>
+                <ul class="d-flex  flex-column">
+                    <li class="font-weight-bold"><a href="{%url ''%}" class="text-light"> Farmers Login</a></li>
+                    <li class="text font-weight-bold"><a href="{%url ''%}" class="text-light">Buyers Login</a></li>
+                    </ul>
+
+            </div>
+            <div class="col-12 col-md-4">
+                <h5>Contact Us</h5>
+                <p class=" font-weight-bold text-light"> 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Nisi sequi fugiat blanditiis ipsam veritatis deleniti alias,
+ doloremque dolore numquam ipsa eveniet vel dignissimos maxime odio,
+  quam omnis corrupti ipsum voluptatem!
+                </p>
+
+            </div>
+            <small class="text-center">All right reserved @2023</small>
+        </div>
+    </footer>
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- Bootstrap JavaScript and Popper.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap Carousel JavaScript plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/js/dist/carousel.min.js"></script>
+   
+
+    <script>
+        function setActiveClass(id) {
+            var dashboardElement = document.getElementById(id);
+            if (dashboardElement) {
+                dashboardElement.classList.add("active");
+            }
+        }
+    </script>
+</body>
+
+</html>
