@@ -1,0 +1,63 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block content %}
+
+<div class="container-fluid pb-4">
+  <div class="row">
+<img src="{%static 'images/Frame 2494.png'%}" alt="" class="col-5">
+<div class="col-7 px-5">
+    <div class="card card-statistics">
+        <div class="card-header">
+            <div class="card-heading">
+                <h4 class="card-title"> Create a <span class="text-green"> Farmers Point </span> account</h4>
+            </div> 
+            <p class="text-danger">{{alert}}</p>
+        </div>
+        <div class="card-body">
+            <form method="post" action="{%url 'register'%}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" {%if email %} value="{{email}}" {%endif%}class="form-control" name="email" required id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputName">First Name</label>
+                    <input type="text" {%if firstname %} value="{{firstname}}" {%endif%} class="form-control" id="exampleInputName1" placeholder="First Name" name="firstname" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your info with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName">Last Name</label>
+                    <input type="text" {%if lastname %} value="{{lastname}}" {%endif%} class="form-control" id="exampleInputName1" placeholder="First Name" name="lastname" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your info with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" required class="form-control" id="exampleInputPassword1" placeholder="Password" name="password1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputconfirmPassword1">Confirm Password</label>
+                    <input type="password" required class="form-control" id="exampleInputPassword1" placeholder="Password" name="password2">
+                </div>
+                <div class="form-group form-check d-flex justify-content-evenly" >
+                    <div>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">farmer</label>
+                    </div>
+                    <div>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">buyer</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign up</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+  </div>
+</div>
+{%endblock%}

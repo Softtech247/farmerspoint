@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class ProductCagories(models.Model):
-    MainCategory = models.CharField(max_length=100)
+    MainCategory = models.CharField(max_length=100, unique=True)
     
     class Meta:
         verbose_name_plural = "Product Categories"
@@ -20,7 +20,7 @@ class Measurement(models.Model):
 
 class ProductSubCagories(models.Model):
     productcategory = models.ForeignKey(ProductCagories, on_delete=models.CASCADE)
-    category = models.CharField(max_length=100)
+    category = models.CharField(max_length=100, unique=True)
     class Meta:
         verbose_name_plural = "Product Sub Categories"
     def __str__(self):
