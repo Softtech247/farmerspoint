@@ -106,3 +106,7 @@ border-radius: 100px;
 .text-primary {
   color: #23A636 !important;
 }
+.active{
+text-decoration: underline #1c8b2c;
+
+}
